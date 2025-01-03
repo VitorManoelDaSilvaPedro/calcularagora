@@ -15,12 +15,12 @@ function Tab({ types }: TabProps) {
         <Tabs defaultValue="account" className="w-[100%] text-lg mt-[10px]">
             <TabsList className="h-10 text-lg">
                 {types.map((item) => (
-                    <TabsTrigger className="text-lg" value={item.id}>{item.label}</TabsTrigger>
+                    <TabsTrigger className="text-lg" key={item.id} value={item.id}>{item.label}</TabsTrigger>
                 ))}
             </TabsList>
 
             {types.map((item) => (
-                <TabsContent className="" value={item.id}>{<item.func />}</TabsContent>
+                <TabsContent className="" key={item.id} value={item.id}>{<item.func />}</TabsContent>
             ))}
         </Tabs>
    ) 
